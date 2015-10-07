@@ -1,0 +1,87 @@
+﻿@*//-------------------------------------------------------------
+    // Name : Contactme.cshtml
+    // Purpose : Html page for contact me form
+    // Developer : Hilal Paray
+    // BA : Hilal Paray
+    // Dated : 2015/10/06
+    // Updated :
+    //-----------------------------------------------------------------*@
+
+@model OnlineResume.Models.ProfileModule
+
+@{
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+@if (ViewBag.Message != null)
+{
+    <script>
+$(document).ready(function(){
+alert('@ViewBag.Message');
+});
+    </script>
+
+}
+
+<div class="leftRightDivPadding">
+    @using (Html.BeginForm())
+    {
+        @Html.AntiForgeryToken()
+        @Html.ValidationSummary(true)
+    <div class="divBorder">
+        <table class="MainTitleLabel">
+            <tr>
+                <td>
+                    <label class="LoginHeaderLabel">@OnlineResumeRes.ContactForm</label>
+                </td>
+            </tr>
+        </table>
+        <div class="divBorderHalf">
+            <div class="errorClass">
+                <ul class="listType01">
+                    <em>@Html.ValidationMessage("Error")</em>
+                </ul>
+            </div>
+            <div ng-app="" class="row">
+                <ul>
+                    <li>
+                        <dl>
+                            <dt>@Html.LabelFor(a => a.ContactName, new { @class = "textlabel" })</dt>
+                            <dt>@Html.TextBoxFor(a => a.ContactName, new { @class = "textFields", maxlength="150"})</dt>
+                            <dt>@Html.ValidationMessageFor(a => a.ContactName, "", new { @class = "validationerror" })</dt>
+                        </dl>
+                    </li>
+                    <li>
+                        <dl>
+                            <dt>@Html.LabelFor(a => a.CompanyName, new { @class = "textlabel" })</dt>
+                            <dt>@Html.TextBoxFor(a => a.CompanyName, new { @class = "textFields" })</dt>
+                        </dl>
+                    </li>
+                    <li>
+                        <dl>
+                            <dt>@Html.LabelFor(a => a.ContactEmail, new { @class = "textlabel" })</dt>
+                            <dt>@Html.TextBoxFor(a => a.ContactEmail, new { @class = "textFields" })</dt>
+                            <dt>@Html.ValidationMessageFor(a => a.ContactEmail, "", new { @class = "validationerror" })</dt>
+                        </dl>
+                    </li>
+                    <li>
+                        <dl>
+                            <dt>@Html.LabelFor(a => a.ContactComment, new { @class = "textlabel" })</dt>
+                            <dt>@Html.TextAreaFor(a => a.ContactComment, new { @class = "textFields" })</dt>
+                            <dt>@Html.ValidationMessageFor(a => a.ContactComment, "", new { @class = "validationerror" })</dt>
+                        </dl>
+                    </li>
+                </ul>
+                <hr />
+                <p>
+                    <input id="btnSubmit" type="submit" value=@OnlineResumeRes.Submit class="ButtonCSS" />
+
+                </p>
+            </div>
+        </div>
+    </div>
+    }
+</div>
+
+
+

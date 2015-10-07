@@ -1,0 +1,82 @@
+﻿@*//-------------------------------------------------------------
+    // Name : _Layout.cshtml
+    // Purpose : Starting page for online resume
+    // Developer : Hilal Paray
+    // BA : Hilal Paray
+    // Dated : 2015/10/05
+    // Updated :
+    //-----------------------------------------------------------------*@
+
+@{
+    string imagePath = "";
+    imagePath = "~/Content/images/";
+}
+
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>@OnlineResumeRes.MainTitle</title>
+
+    @*Scripts*@
+    <script src="~/Scripts/jquery-2.1.4.js"></script>
+    <script src="~/Scripts/jquery-2.1.4.min.js"></script>
+    <script src="~/Scripts/bootstrap.min.js"></script>
+    <script src="@Url.Content("~/Scripts/jquery-ui.js")"></script>
+    <script src="~/Scripts/angular.js"></script>
+
+        @*Css Classes*@
+        <link href="~/Content/bootstrap.min.css" rel="stylesheet" type="text/css" />
+        <link href="@Url.Content("~/Content/bootstrap-responsive.css")" rel="stylesheet" type="text/css" />
+        <link href="@Url.Content("~/Content/bootstrap-responsive.min.css")" rel="stylesheet" type="text/css" />
+        <link href="@Url.Content("~/Content/jquery-ui.css")" rel="stylesheet" type="text/css" />
+
+
+
+        @*Customised Classes*@
+        <link href="~/Content/OnlyResumeStyles.css" rel="stylesheet" />
+    </head>
+
+    <body>
+        <div class="container body-content">
+
+            <div class="divBorderTop1">
+                @{
+
+                <div class="buttondivNavbar">
+                        <a class="DashBoardimages" href="@Url.Action("Index", "Home")">
+                            <img src="@Url.Content(imagePath + "Home.jpg")" title=@OnlineResumeRes.Main />
+                        </a>
+                    </div>
+                <div class="buttondivNavbar">
+                        <a class="DashBoardimages" href="@Url.Action("MyResume", "Functions")">
+                            <img src="@Url.Content(imagePath + "CV.jpg")" title=@OnlineResumeRes.Resume />
+                        </a>
+                    </div>
+                <div class="buttondivNavbar">
+                        <a class="DashBoardimages" href="@Url.Action("MyProjects", "Functions")">
+                            <img src="@Url.Content(imagePath + "Projects.jpg")" title=@OnlineResumeRes.Projects />
+                        </a>
+                    </div>
+                <div class="buttondivNavbar">
+                        <a class="DashBoardimages" href="@Url.Action("SocialLinks", "Functions")">
+                            <img src="@Url.Content(imagePath + "Socail.jpg")" title=@OnlineResumeRes.SocialLinks />
+                        </a>
+                    </div>
+                <div class="buttondivNavbar">
+                        <a class="DashBoardimages" href="@Url.Action("ContactMe", "Functions")">
+                            <img src="@Url.Content(imagePath + "Contact.jpg")" title=@OnlineResumeRes.Contact />
+                        </a>
+                    </div>
+
+            }
+            </div>
+            @RenderBody()
+            <footer>
+                <p class="CopyRightPadding">@DateTime.Now.Year - @OnlineResumeRes.Copyright</p>
+            </footer>
+        </div>
+    </body>
+</html>

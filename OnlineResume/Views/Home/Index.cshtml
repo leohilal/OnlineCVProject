@@ -1,0 +1,72 @@
+﻿@*//-------------------------------------------------------------
+    // Name : General information.cshtml
+    // Purpose : Html page for online resume general information
+    // Developer : Hilal Paray
+    // BA : Hilal Paray
+    // Dated : 2015/10/06
+    // Updated :
+    //-----------------------------------------------------------------*@
+
+@{
+    Layout = "~/Views/Shared/_Layout.cshtml";
+
+    string imagePath = "";
+    imagePath = "~/Content/images/";
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title></title>
+</head>
+<body>
+    <div class="divBorder">
+        <table class="MainTitleLabel">
+            <tr>
+                <td>
+                    <label >@OnlineResumeRes.GeneralInformation</label>
+                </td>
+            </tr>
+        </table>
+        <div class="divBorderHalf">
+            <a class="mainImageClass" href="@Url.Action("DashBoard", "Home")">
+                <img src="@Url.Content(imagePath + "MyPhoto.jpg")" title=@OnlineResumeRes.Main />
+            </a>
+            <table class="LabelCss">
+            <tr>
+                <td>Hilal Paray </td>
+            </tr>
+                <tr>
+                    <td>Abu Dhabi </td>
+                </tr>
+                <tr>
+                    <td>+971569242269</td>
+                </tr>
+                <tr>
+                    <td><label>----------------------</label></td>
+                </tr>
+                <tr>
+                    <td>Tokyo Japan </td>
+                </tr>
+                <tr>
+                    <td>+818034365974</td>
+                </tr>
+                <tr>
+                    <td><label>----------------------</label></td>
+                </tr>
+                <tr>
+                    <td>hilal2005@gmail.com</td>
+                </tr>
+                <tr>
+                    <td>leohilal@hotmail.com</td>
+                </tr>
+                <tr>
+                    <td><label>----------------------</label></td>
+                </tr>
+            </table>
+        </div>
+    </div>
+</body>
+</html>

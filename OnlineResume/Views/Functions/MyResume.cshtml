@@ -1,0 +1,25 @@
+﻿@*//-------------------------------------------------------------
+    // Name : MyResume.cshtml
+    // Purpose : Html page for Displaying My CV in iframe
+    // Developer : Hilal Paray
+    // BA : Hilal Paray
+    // Dated : 2015/10/06
+    // Updated :
+    //-----------------------------------------------------------------*@
+
+@{
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title></title>
+</head>
+<body>
+    <div id="content">
+        <iframe id="iframe" frameborder="0" src="@Url.Content("~/HTML/CV_Main.htm")" style="width: 100%; height: 700px;"></iframe>      
+    </div>
+</body>
+</html>

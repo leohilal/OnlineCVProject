@@ -1,0 +1,52 @@
+﻿@*//-------------------------------------------------------------
+    // Name : SocailLinks.cshtml
+    // Purpose : Html page for socal links
+    // Developer : Hilal Paray
+    // BA : Hilal Paray
+    // Dated : 2015/10/06
+    // Updated :
+    //-----------------------------------------------------------------*@
+@{
+    Layout = "~/Views/Shared/_Layout.cshtml";
+    string imagePath = "~/Content/images/";
+}
+
+<div class="leftRightDivPadding">
+    @using (Html.BeginForm())
+    {
+        @Html.AntiForgeryToken()
+        @Html.ValidationSummary(true)
+        <div class="divBorder">
+            <table class="MainTitleLabel">
+                <tr>
+                    <td>
+                        <label class="LoginHeaderLabel">@OnlineResumeRes.SocialLinks</label>
+                    </td>
+                </tr>
+            </table>
+            <div class="divBorderHalf">
+                <em class="textlabel">@OnlineResumeRes.Facebook</em>
+                <ul>
+                    <li>
+                        <dl><dt><a><label>https://www.facebook.com/leohilal</label></a></dt></dl>
+                    </li>
+                </ul>
+                <em class="textlabel">@OnlineResumeRes.Linkedin</em>
+                <ul>
+                    <li>
+                        <dl><dt><a><label>https://www.linkedin.com/profile/view?id=AAIAAAhH5boBfjs5WTUCxx5wcXIqFbnKhN7VvEQ&trk=nav_responsive_tab_profile_pic</label></a></dt></dl>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    }
+</div>
+
+
+
+
+
+
+
+
+
